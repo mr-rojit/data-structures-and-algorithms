@@ -28,4 +28,17 @@ d.left = g
 
 
 def search(root, target):
-    pass
+    stack = [root]
+    
+    while(stack):
+        current = stack.pop()
+        if current.value == target:
+            return True
+        if current.left:
+            stack.append(current.left)
+        if current.right:
+            stack.append(current.right)
+    return False
+
+print(search(a, 'e'))
+print(search(a, 'z'))
